@@ -1,3 +1,8 @@
+#' @export
+is.bigobenchmark <- function(x) {
+  inherits(x, "bigobenchmark")
+}
+
 #' bigobenchmark runner
 #'
 #' @param ... Expressions to benchmark. Passed to \code{microbenchmark}.
@@ -26,5 +31,21 @@ bigobenchmark <- function(...,
     r[[i]] <- summary(do.call(microbenchmark::microbenchmark, c(exprs, list=list, times=times, check=check, control=control)))
     r[[i]]["arg"] <- n
   }
-  bind_rows(r)
+  return(structure(list(benchmarks=bind_rows(r)), class = "bigobenchmark"))
+}
+
+#' Autoplot for bigobenchmark object
+#'
+#' @param object
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#' @author Andrew Prokhorenkov
+autoplot.bigobenchmark <- function(object) {
+  ggplot(data = object$benchmarks, aes(x=arg, y=mean, colour=expr)) +
+    geom_line() +
+    geom_pointrange(aes(ymin=min, ymax=max))
 }
