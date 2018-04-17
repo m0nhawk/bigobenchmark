@@ -7,8 +7,10 @@ Maintainer: Andrew Prokhorenkov <andrew.prokhorenkov@gmail.com>
 Description: Wrapper for `microbenchmark` to calculate benchmark for multiple inputs
 Depends: R (>= 3.4.0)
 Imports:
-    tidyverse,
+    dplyr,
+    ggplot2,
     microbenchmark
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
