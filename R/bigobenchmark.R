@@ -44,6 +44,7 @@ bigobenchmark <- function(...,
 #' @importFrom ggplot2 ggplot
 #' @importFrom ggplot2 geom_line
 #' @importFrom ggplot2 geom_pointrange
+#' @importFrom ggplot2 autoplot
 #'
 #' @param object
 #' @name autoplot
