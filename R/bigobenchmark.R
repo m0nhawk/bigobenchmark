@@ -41,14 +41,12 @@ bigobenchmark <- function(...,
 
 #' Autoplot for bigobenchmark object
 #'
-#' @importFrom ggplot2 ggplot
-#' @importFrom ggplot2 geom_line
-#' @importFrom ggplot2 geom_pointrange
 #' @importFrom ggplot2 autoplot
 #'
 #' @param object
-#' @name autoplot
-#' @export autoplot.bigobenchmark
+#'
+#' @return A ggplot2 plot
+#' @export
 #'
 #' @examples
 #' # Create plot for benchmarks
@@ -58,7 +56,8 @@ bigobenchmark <- function(...,
 #'
 #' @author Andrew Prokhorenkov
 autoplot.bigobenchmark <- function(object) {
-  ggplot(data = object$benchmarks, aes(x=arg, y=mean, colour=expr)) +
-    geom_line() +
-    geom_pointrange(aes(ymin=min, ymax=max))
+  plt <- ggplot2::ggplot(data = object$benchmarks, ggplot2::aes(x=arg, y=mean, colour=expr))
+  plt <- plt + ggplot2::geom_line()
+  plt <- plt + ggplot2::geom_pointrange(aes(ymin=min, ymax=max))
+  plt
 }
