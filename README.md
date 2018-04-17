@@ -5,5 +5,5 @@ Wrapper for `microbenchmark` to nicely run it on multiple inputs and plot.
 
 ```splus
 library("devtools")
-install_github("bigobenchmark/bigobenchmark")
+install_github("m0nhawk/bigobenchmark")
 ```
