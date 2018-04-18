@@ -39,6 +39,16 @@ bigobenchmark <- function(...,
   return(structure(list(benchmarks=bind_rows(r)), class = "bigobenchmark"))
 }
 
+#' bigobenchmark exported operators and S3 methods
+#'
+#' The following functions are imported and then re-exported
+#' from the bigobenchmark  package to avoid loading them.
+#'
+#' @importFrom ggplot2 autoplot
+#' @name autoplot
+#' @export
+NULL
+
 #' Autoplot for bigobenchmark object
 #'
 #' @importFrom ggplot2 autoplot
@@ -56,8 +66,8 @@ bigobenchmark <- function(...,
 #'
 #' @author Andrew Prokhorenkov
 autoplot.bigobenchmark <- function(object) {
-  plt <- ggplot2::ggplot(data = object$benchmarks, ggplot2::aes(x=arg, y=mean, colour=expr))
+  plt <- ggplot2::ggplot(data = object$benchmarks, ggplot2::aes(x = arg, y = mean, colour = expr))
   plt <- plt + ggplot2::geom_line()
-  plt <- plt + ggplot2::geom_pointrange(aes(ymin=min, ymax=max))
+  plt <- plt + ggplot2::geom_pointrange(ggplot2::aes(ymin = min, ymax = max))
   plt
 }
