@@ -1,7 +1,7 @@
 Package: bigobenchmark
 Type: Package
 Title: Big-O Benchmark
-Version: 0.1.0
+Version: 0.2.0
 Author: Andrew Prokhorenkov
 Maintainer: Andrew Prokhorenkov <andrew.prokhorenkov@gmail.com>
 Description: Wrapper for `microbenchmark` to calculate benchmark for multiple inputs
