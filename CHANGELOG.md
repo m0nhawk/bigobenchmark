@@ -10,7 +10,7 @@ Initial release
 
 ### Changed
 - Supports R >= 3.1.0
-- Make `autoplot` work without `library("ggplot2")`
+- Make `autoplot` work without `library("ggplot2")` (special thanks for [@symbolixau](https://github.com/symbolixau/) and [@pvictor](https://github.com/pvictor) for the help on this)
 - Working examples
 - Documentation draft
 
