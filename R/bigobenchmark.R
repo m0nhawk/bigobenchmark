@@ -31,7 +31,10 @@ bigobenchmark <- function(...,
                           control=list()) {
   exprs <- c(as.list(match.call(expand.dots = FALSE)$`...`), list)
   r <- vector("list", length(args))
+
   for(i in 1:length(args)) {
+    gc(FALSE)
+
     n <- args[[i]]
     r[[i]] <- summary(do.call(microbenchmark::microbenchmark, c(exprs, list=list, times=times, check=check, control=control)))
     r[[i]]["arg"] <- n
