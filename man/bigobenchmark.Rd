@@ -28,7 +28,7 @@ bigobenchmark runner
 }
 \examples{
 # Measure difference between linear and quadratic functions
-bench <- bigobenchmark(1:n, for(i in 1:n) for(i in 1:n) 1:n, args=seq(from=1, to=100, length.out = 50))
+bench <- bigobenchmark(cumsum(1:n), cumprod(1:n), args=seq(from=1000, to=10000, length.out = 50))
 bench
 
 }
