@@ -4,7 +4,7 @@
 \alias{autoplot.bigobenchmark}
 \title{Autoplot for bigobenchmark object}
 \usage{
-autoplot.bigobenchmark(object)
+\method{autoplot}{bigobenchmark}(object)
 }
 \arguments{
 \item{object}{}
