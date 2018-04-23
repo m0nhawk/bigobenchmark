@@ -15,3 +15,5 @@ library("bigobenchmark")
 bench <- bigobenchmark(1:n, for(i in 1:n) for(i in 1:n) 1:n, args=seq(from=1, to=100, length.out = 50))
 autoplot(bench)
 ```
+
+![bigobenchmark](example.png?raw=true "bigobenchmark")
